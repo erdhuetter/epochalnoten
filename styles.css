@@ -325,26 +325,3 @@ button:focus {
 .note-button:hover {
     background-color: #0056b3; /* Dunkleres Blau bei Hover */
 }
-
-#scale-container {
-    transform-origin: 0 0;
-    transform: scale(1);
-}
-
-@media (max-width: 1024px) {
-    #scale-container {
-        transform: scale(0.8); /* Skaliert die gesamte Seite auf 80% */
-    }
-}
-
-@media (max-width: 768px) {
-    #scale-container {
-        transform: scale(0.6); /* Skaliert die gesamte Seite auf 60% */
-    }
-}
-
-@media (max-width: 480px) {
-    #scale-container {
-        transform: scale(0.4); /* Skaliert die gesamte Seite auf 40% */
-    }
-}
