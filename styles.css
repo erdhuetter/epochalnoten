@@ -327,18 +327,14 @@ button:focus {
 }
 
 /* Mobile Styles */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 1024px) {
+    body, header, #main-content {
+        width: 100%; /* Volle Breite für mobile Geräte */
     }
 
-    .class-card {
-        width: 100%;
-    }
-
-    #login-form input, #login-form button, #admin-panel input {
-        width: 100%;
+    .class-card, .student-card {
+        width: calc(100% - 1rem); /* Vollständige Breite für Karten */
+        margin: 0.5rem;
     }
 
     .student-card {
@@ -358,7 +354,10 @@ button:focus {
     .add-student-button, .remove-add-student-button {
         width: 100%;
     }
-}
+
+    .header h1 {
+        font-size: 2rem; /* Kleinere Schriftgröße für Header auf mobilen Geräten */
+    }
 
 /* Tablet Styles */
 @media (min-width: 601px) and (max-width: 1024px) {
