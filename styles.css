@@ -325,19 +325,3 @@ button:focus {
 .note-button:hover {
     background-color: #0056b3; /* Dunkleres Blau bei Hover */
 }
-
-/* Spezifische Anpassungen für Mobilgeräte */
-@media (max-width: 600px) {
-    .student-card {
-        flex-direction: column;
-    }
-
-    .student-card span, .student-card input, .student-card button {
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
-
-    .student-card .delete-student-button {
-        width: 100%;
-    }
-}
