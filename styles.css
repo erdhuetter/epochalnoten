@@ -258,6 +258,13 @@ button:focus {
     flex: 1; /* Gleiche Breite für alle Elemente */
 }
 
+.student-grade-display {
+    display: none; /* Standardmäßig ausgeblendet */
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 0.5rem; /* Abstand nach oben */
+}
+
 .student-card input {
     width: auto; /* Flexbox sorgt für die gleiche Breite */
 }
@@ -286,18 +293,8 @@ button:focus {
     margin-top: 2rem; /* Mehr Abstand zu den Schülern */
 }
 
-.student-grade-display {
-    font-weight: bold;
-	min-height: 1.2rem;
-}
-
 .add-student-trigger-button {
     margin-top: 4rem; /* Abstand nach oben erhöhen */
-}
-
-.grade-display-left {
-    margin-right: auto; /* Automatische Ausrichtung nach links */
-    margin-left: 16rem; /* Zusätzlicher Abstand nach links */
 }
 
 .logo {

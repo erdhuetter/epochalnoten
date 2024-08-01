@@ -301,7 +301,7 @@ function loadStudents(classCard, students) {
             ${!isAdmin ? `
                 <input type="password" placeholder="Passwort eingeben" class="student-password-input">
                 <button onclick="checkPassword(this, '${student.password}', '${student.grade}')" class="note-button">Note Anzeigen</button>
-                <span class="student-grade-display hidden">Note: ${student.grade}</span>
+                <span class="hidden">Note: ${student.grade}</span>
             ` : ''}
             ${isAdmin ? `<button class="delete-student-button" onclick="deleteStudent(this, '${classCard.querySelector('h3').innerText}', '${student.name}')">x</button>` : ''}
         `;
@@ -349,12 +349,13 @@ function checkPassword(button, correctPassword, grade) {
 
     if (enteredPassword === correctPassword) {
         gradeDisplay.classList.remove('hidden');
-        gradeDisplay.classList.add('grade-display-left'); // Klasse hinzufügen
+        gradeDisplay.classList.add('student-grade-display'); // Klasse hinzufügen
         button.style.display = 'none';
-        passwordInput.classList.add('hidden-input'); // Passwortfeld unsichtbar machen
+        passwordInput.style.display = 'none'; // Passwortfeld unsichtbar machen
         gradeDisplay.innerHTML = `<strong>Note:</strong> ${grade}`; // Note fett machen
-        gradeDisplay.style.fontSize = '1.5rem'; // Schriftgröße anpassen
+        gradeDisplay.style.fontSize = '2rem'; // Schriftgröße anpassen
         gradeDisplay.style.fontWeight = 'bold'; // Schrift fett machen
+        gradeDisplay.style.display = 'block'; // Note anzeigen
 
         // Konfetti abschießen, wenn die Note 1 ist
         if (grade == 1) {
