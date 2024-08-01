@@ -353,7 +353,7 @@ function checkPassword(button, correctPassword, grade) {
         button.style.display = 'none';
         passwordInput.classList.add('hidden-input'); // Passwortfeld unsichtbar machen
         gradeDisplay.innerHTML = `<strong>Note:</strong> ${grade}`; // Note fett machen
-        gradeDisplay.style.fontSize = '1rem'; // Schriftgröße anpassen
+        gradeDisplay.style.fontSize = '1.5rem'; // Schriftgröße anpassen
         gradeDisplay.style.fontWeight = 'bold'; // Schrift fett machen
 
         // Konfetti abschießen, wenn die Note 1 ist
