@@ -1,0 +1,391 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #fa8910;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@font-face {
+    font-family: 'Fredoka';
+    src: url('Fredoka.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header h1 {
+    margin: 0;
+	color: #474747;
+	font-weight: bold;
+	font-family: 'Fredoka';
+	font-size: 3rem;
+}
+
+.super {
+	font-weight: bold;
+	font-family: 'Fredoka';
+	font-size: 1.6rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#logout-form span {
+    color: #474747; /* Schwarze Schriftfarbe */
+    font-weight: bold; /* Fettschrift */
+    font-size: 1.4rem; /* Größere Schriftgröße */
+	margin-right: 1rem; /* Abstand nach links */
+	font-family: 'Fredoka';
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+    height: 1.2rem; /* Höhe der Eingabefelder anpassen */
+    padding: 0.5rem; /* Innenabstand für größere Felder */
+    font-size: 1rem; /* Schriftgröße anpassen */
+    margin-bottom: 0.5rem; /* Abstand zwischen den Eingabefeldern */
+    width: 300px; /* Setzen Sie die gleiche Breite für Eingabefelder und Button */
+    border: 1px solid #ccc; /* Rahmenfarbe */
+    border-radius: 5px; /* Abgerundete Ecken */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Leichter innerer Schatten */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Übergang für Rand und Schatten */
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
+    border-color: #007bff; /* Rahmenfarbe bei Fokus */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2), 0 0 8px rgba(0,123,255,0.6); /* Schatten bei Fokus */
+    outline: none; /* Entfernt die Standard-Umrandung */
+}
+
+.button-centered-text {
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    line-height: normal; /* Normale Zeilenhöhe */
+}
+
+.hidden-input {
+    visibility: hidden;
+}
+
+button {
+    background-color: #007bff; /* Blau */
+    color: white; /* Weiße Schrift */
+    border: none; /* Keine Umrandung */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 0.5rem 1rem; /* Innenabstand */
+    font-size: 1rem; /* Schriftgröße */
+    cursor: pointer; /* Zeiger bei Hover */
+    transition: background-color 0.3s ease; /* Übergang für Hintergrundfarbe */
+}
+
+button:hover {
+    background-color: #0056b3; /* Dunkleres Blau bei Hover */
+}
+
+button:active,
+button:focus {
+    outline: none; /* Entfernt die Standard-Umrandung */
+}
+
+.student-card input[type="password"] {
+    padding-top: 0.75rem; /* Innenabstand oben */
+}
+
+.student-card {
+    padding-top: 0.25rem; /* Innenabstand oben */
+}
+
+/* Spezifische Styles für grüne Buttons */
+.add-student-button,
+.add-student-trigger-button {
+    background-color: green; /* Grün */
+    color: white;
+}
+
+.add-student-button:hover,
+.add-student-trigger-button:hover {
+    background-color: darkgreen; /* Dunkleres Grün bei Hover */
+}
+
+/* Spezifische Styles für rote Buttons */
+.logout-button {
+    background-color: red; /* Rot */
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: darkred; /* Dunkleres Rot bei Hover */
+}
+
+.add-student-button {
+    background-color: green; /* Grün */
+}
+
+.add-student-button:hover {
+    background-color: darkgreen; /* Dunkleres Grün bei Hover */
+}
+
+.remove-add-student-button {
+    background-color: red; /* Rot */
+}
+
+.remove-add-student-button:hover {
+    background-color: darkred; /* Dunkleres Rot bei Hover */
+}
+
+.delete-button, .edit-button, .copy-button, .pdf-button {
+    position: absolute;
+    top: 10px;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    height: 30px; /* Einheitliche Höhe */
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.edit-button {
+    right: 40px;
+    background: blue;
+    color: white;
+}
+
+.edit-button:hover {
+    background: darkblue;
+}
+
+.delete-button {
+    right: 10px;
+    background: red;
+    color: white;
+}
+
+.delete-button:hover {
+    background: darkred;
+}
+
+.copy-button {
+    right: 70px;
+    background: green;
+    color: white;
+}
+
+.copy-button:hover {
+    background: darkgreen;
+}
+
+.pdf-button {
+    right: 100px;
+    background: orange;
+    color: white;
+}
+
+.pdf-button:hover {
+    background: darkorange;
+}
+
+#login-form label {
+    color: black; /* Setzt die Schriftfarbe auf schwarz */
+    font-weight: bold;
+}
+
+#admin-panel {
+    padding: 1rem;
+}
+
+#admin-panel input {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#classes-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.class-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 0.5rem;
+    padding: 1.5rem;
+    width: calc(50% - 1rem);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.class-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.student-card {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Keine Umbrüche zulassen */
+}
+
+.student-card span,
+.student-card input,
+.student-card button {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+	font-weight: bold;
+    font-family: 'Fredoka';
+    margin-bottom: 0;
+    height: 2.5rem; /* Gleiche Höhe für alle Eingabeelemente und Buttons */
+    line-height: 2.4rem; /* Vertikale Zentrierung */
+    flex: 1; /* Gleiche Breite für alle Elemente */
+}
+
+.student-card input {
+    width: auto; /* Flexbox sorgt für die gleiche Breite */
+}
+
+.student-card .delete-student-button {
+    width: 2.5rem; /* Gleiche Breite wie Höhe */
+    height: 2.5rem; /* Quadratisch */
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 2.5rem; /* Feste Breite und Höhe */
+}
+
+.separator {
+    border-top: 1px solid #ccc;
+    margin: 2rem 0 1rem 0; /* Mehr Abstand zur Trennlinie */
+    padding-top: 1rem;
+}
+
+.add-student-form-container {
+    margin-top: 2rem; /* Mehr Abstand zu den Schülern */
+}
+
+.student-grade-display {
+    font-weight: bold;
+	min-height: 1.2rem;
+}
+
+.add-student-trigger-button {
+    margin-top: 4rem; /* Abstand nach oben erhöhen */
+}
+
+.grade-display-left {
+    margin-right: auto; /* Automatische Ausrichtung nach links */
+    margin-left: 16rem; /* Zusätzlicher Abstand nach links */
+}
+
+.logo {
+    height: 150px; /* Passen Sie die Höhe des Logos nach Bedarf an */
+    width: auto;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+}
+
+.note-button {
+    padding-top: 0.1rem; /* Innenabstand oben */
+    padding-bottom: 0; /* Innenabstand unten */
+    line-height: 3.2rem; /* Vertikale Zentrierung */
+    background-color: #007bff; /* Blau */
+    color: white; /* Weiße Schrift */
+    border: none; /* Keine Umrandung */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 0.1rem 1rem; /* Innenabstand */
+    font-size: 1rem; /* Schriftgröße */
+    cursor: pointer; /* Zeiger bei Hover */
+    transition: background-color 0.3s ease; /* Übergang für Hintergrundfarbe */
+	font-weight: bold;
+}
+
+.note-button:hover {
+    background-color: #0056b3; /* Dunkleres Blau bei Hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .class-card {
+        width: 100%;
+    }
+
+    #login-form input, #login-form button, #admin-panel input {
+        width: 100%;
+    }
+
+    .student-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .student-card span, .student-card input, .student-card button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .student-card .delete-student-button {
+        width: 100%;
+    }
+
+    .add-student-button, .remove-add-student-button {
+        width: 100%;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .class-card {
+        width: 48%;
+        margin: 1%;
+    }
+
+    #login-form input, #login-form button, #admin-panel input {
+        width: 100%;
+    }
+
+    .student-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .student-card .delete-student-button {
+        width: 100%;
+    }
+
+    .add-student-button, .remove-add-student-button {
+        width: 100%;
+    }
+}

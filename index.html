@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epochalnoten by Herr Erdhütter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Bewertungen für Mitarbeit und Verhalten</h1>
+        <div id="login-section">
+            <div id="login-form">
+                <input type="text" id="username" placeholder="Benutzername">
+                <input type="password" id="password" placeholder="Passwort">
+                <button id="login-button">Login</button>
+            </div>
+            <div id="logout-form" class="hidden">
+                <span>Angemeldet als Admin</span>
+                <button id="logout-button">Logout</button>
+            </div>
+        </div>
+    </header>
+    <main id="main-content">
+        <div id="admin-panel" class="hidden">
+            <h2>Admin Panel</h2>
+            <input type="text" id="class-name" placeholder="Klassenname">
+            <input type="text" id="class-description" placeholder="Beschreibung">
+            <button onclick="addClass()">Klasse hinzufügen</button>
+        </div>
+        <div id="classes-container"></div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
