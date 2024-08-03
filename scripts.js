@@ -23,15 +23,27 @@ function login() {
     // Hier stellen Sie sicher, dass der Schlüssel eine Zeichenkette ist
     const key = "112";
 
-    if (decrypt("VENWWc1GRVRA", key) === username && decrypt("ZVldQ0JRWV9dQwAFHAEF", key) === password) {
-        isAdmin = true;
-        document.getElementById('login-form').style.display = 'none';
-        document.getElementById('logout-form').classList.remove('hidden');
-        document.getElementById('admin-panel').classList.remove('hidden');
-        updateClassesUI();
-    } else {
-        alert('Falscher Benutzername oder Passwort');
-    }
+    // Zugriff auf den verschlüsselten Benutzernamen und das Passwort in Firestore
+    db.collection('adminCredentials').doc('mainAdmin').get().then((doc) => {
+        if (doc.exists) {
+            const encryptedUsername = doc.data().encryptedUsername;
+            const encryptedPassword = doc.data().encryptedPassword;
+
+            if (decrypt(encryptedUsername, key) === username && decrypt(encryptedPassword, key) === password) {
+                isAdmin = true;
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('logout-form').classList.remove('hidden');
+                document.getElementById('admin-panel').classList.remove('hidden');
+                updateClassesUI();
+            } else {
+                alert('Falscher Benutzername oder Passwort');
+            }
+        } else {
+            console.error("Keine Admin-Anmeldedaten gefunden!");
+        }
+    }).catch((error) => {
+        console.error("Fehler beim Abrufen der Anmeldedaten: ", error);
+    });
 }
 
 function logout() {
